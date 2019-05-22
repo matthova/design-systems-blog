@@ -88,7 +88,7 @@ If after the fact we want to add a spacing value of `{ xs: 4 }` we can do so wit
 This same pattern can be applied with any styled-system helper function
 
 ## Using key-based breakpoints to render responsive content
-StyledSystem allows for modifying theme props based on the current breakpoint. For example with key-based breakpoints for the theme
+StyledSystem allows for modifying space props based on the current breakpoint. For example with key-based breakpoints for the theme
 ```js
 const theme = {
   space: {
@@ -130,5 +130,55 @@ Note, since breakpoints set a `min-width` media query, iit's not necessary to se
 
 ## Using key-based breakpoints to render responsive layouts
 Managing multiple responsive components in the context of a layout can become a bit messy. 
-Imagine a layout that behaves like this:
+Imagine a layout that behaves like this:  
+
+| For a Larger layout      |  For a smaller layout |
+|--------------------------|-----------------------|
+|![large breakpoint layout](large-breakpoint-layout.jpg)|![small breakpoint layout](small-breakpoint-layout.jpg)|
+
+Instead of using media queries and per-breakpoint style declaration, in many cases it was easier to create a per-breakpoint layout. We set event listeners onResize and then determine the `responsiveKey` from that.
+For example: 
+```jsx
+const theme = {
+  breakpoints: {
+    s: 0,
+    l: 800,
+  }
+};
+
+function ourLayout({ menu, title, userIcon, filter, children }) {
+  const [responsiveKey, setResponsiveKey] = useState(getCurrentResponsiveKey());
+
+  function getCurrentResponsiveKey() {
+    // Fall-back to the smallest breakpoint if nothing else matches
+    let currentResponsiveKey = Object.values(theme.breakpoints)[0];
+
+    for(const [key, value] of Object.entries(theme.breakpoints) {
+      if (window.innerWidth >= value) {
+        currentResponsiveKey = key;
+      }
+    }
+    return responsiveKey
+  }
+
+  function setCurrentResponsiveKey() {
+    setResponsiveKey(getCurrentResponsiveKey());
+  }
+
+  // componentDidMount
+  useEffect(() => {
+    window.addEventListener('resize', setCurrentResponsiveKey);
+    // componentWillUnmount
+    return () => {
+      window.removeEventListener('resize', setCurrentResponsiveKey);
+    }
+  }, []);
+
+  if(responsiveKey === 's') {
+    return; // Imeplement small layout here
+  } else if (responsiveKey === 'l') {
+    return; // Implement large layout here
+  }
+}
+```
 
