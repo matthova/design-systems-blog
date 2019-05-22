@@ -1,17 +1,18 @@
 > This blog is targeted at javascript developers with experience using React, but many of the design-system concepts should be applicable across any User Interface (UI). 
 
 The goal of this blog is to:
-  1. Talk about what helped me get up to speed with css.
+  1. Talk about what helped me get up to speed with implementing page layouts in css.
   2. Talk about how to set up a theme to be consumed by styled-components and styled-system.
   3. Brain-dump some things so that I don't forget 🧠.
 
 ## Some background
-April 2018 I began my work at Oqton as a principal front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code (for the front-end), but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification. At some point during the first week, I noticed a bug in the UI that was only happening on Firefox. I did a bit of googling, wrote a few lines of css, and was very proud of myself when I was able to make a PR that addressed the issue. As the app evolved, our UI-Lead (who had been doing most of the css to this point) had assigned me a few more css-related tickets. I was frustrated by how long it took me to implement designs that, on first-glance, I considered “so simple”.
+April 2018 I began my work at Oqton as a front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code, but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification.  
+At some point during the first week, I noticed a bug in the UI that was only happening on Firefox. I did a bit of googling, wrote a few lines of css, and was very proud of myself when I was able to make a PR that addressed the issue. As the app evolved, our UI-Lead (who had been doing most of the css to this point) had assigned me a few more css-related tickets. I was frustrated by how long it took me to implement designs that, on first-glance, I considered “so simple”.
 
 # FLEXBOX-ZOMBIES
 While googling furiously to find the solution to a css-problem I was stuck on, I came upon the site [Flexbox-Zombies](https://mastery.games/p/flexbox-zombies). They didn’t have an immediate solution to my problem, but they did completely change the way that I approach css. This site offers an amazing (free) course that teaches you step-by-step how to use flexbox. I can’t say this enough: 
 
-**“Flexbox-Zombies has been one of the most useful learning resources in my career and I recommend it to anyone who uses css”.** 
+**Flexbox-Zombies has been one of the most useful learning resources in my career and I recommend it to anyone who uses css.** 
 
 After completing the flexbox-zombies course, I became more confident in fixing css and even implementing new features.
 
@@ -87,4 +88,47 @@ If after the fact we want to add a spacing value of `{ xs: 4 }` we can do so wit
 This same pattern can be applied with any styled-system helper function
 
 ## Using key-based breakpoints to render responsive content
+StyledSystem allows for modifying theme props based on the current breakpoint. For example with key-based breakpoints for the theme
+```js
+const theme = {
+  space: {
+    none: 0,
+    xs: 4,
+    s: 8,
+    m: 16
+   },
+  breakpoints: {
+    s: 0,
+    m: 400,
+    l: 800,
+    xl: 1200,
+  }
+};
+```
+
+You can use breakpoint keys to set per-breakpoint padding
+```jsx
+<Box
+  pt={{
+    s: 'xs',
+    m: 's',
+    l: 's',
+    xl: 'm'
+  }}
+/>
+```
+Note, since breakpoints set a `min-width` media query, iit's not necessary to set multiple breakpoint values. For example the above code snippet can be condensed to this:
+```jsx
+<Box
+  pt={{
+    s: 'xs',
+    m: 's',
+    xl: 'm'
+  }}
+/>
+```
+
+## Using key-based breakpoints to render responsive layouts
+Managing multiple responsive components in the context of a layout can become a bit messy. 
+Imagine a layout that behaves like this:
 
