@@ -1,13 +1,13 @@
 > NOTE: This blog is targeted at javascript developers with experience using React, but many of the design-system concepts should be applicable across any User Interface (UI). 
 
 The goal of this blog is to talk about:
-  1. [What helped me get up to speed with implementing page layouts in css.]()
-  2. [How we used object key syntax to implement a theme with by styled-components and styled-system.]()
-  3. [Implementing responsive layouts using a window resize listener and the theme's breakpoint definitions.]()
+  1. [Getting up to speed with page layouts in css](#getting-up-to-speed-with-page-layouts-in-css)
+  2. [Using object key syntax with Styled-System](#using-object-key-syntax-with-styled-system)
+  3. [Implementing responsive layouts with a theme](#implementing-responsive-layouts-with-a-theme)
   
   
 
-# What helped me get up to speed with implementing page layouts in css.
+# Getting up to speed with page layouts in css
 April 2018 I began my work at [Oqton](https://www.oqton.com/) as a front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code, but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification.  
 
 ![Padding Pull Request](padding-pr.jpg)
@@ -22,7 +22,7 @@ After completing the flexbox-zombies course, I became more confident in fixing c
 
 Our UI-Lead had mentioned that we were potentially looking to hire another UI engineer. He had mentioned that the candidate would either be focusing on business-logic or design-system implementation. By this time I had cut my teeth on a few more css-related tickets. I wondered if I had the skills necessary to implement the styling for our app. I offered that I would be interested in taking ownership of our style implementation and beginning the work in making an official design system for our UI team.  
 
-# How we used object key syntax to implement a theme with by styled-components and styled-system.
+# Using object key syntax with Styled-System
 
 We utilize:
 - [Styled Components](https://www.styled-components.com/) library to write CSS-in-JS for our app’s components 
@@ -94,7 +94,7 @@ If after the fact we want to add a spacing value of `{ xs: 4 }` we can do so wit
 
 This same pattern can be applied with any styled-system helper function
 
-# Implementing responsive layouts using a window resize listener and the theme's breakpoint definitions.
+# Implementing responsive layouts with a theme
 
 [Styled System](https://styled-system.com/) allows for modifying space props based on the current breakpoint. For example with key-based breakpoints for the theme
 ```js
