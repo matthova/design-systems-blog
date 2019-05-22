@@ -125,7 +125,7 @@ You can use breakpoint keys to set per-breakpoint padding
   }}
 />
 ```
-Note, since breakpoints set a `min-width` media query, iit's not necessary to set multiple breakpoint values. For example the above code snippet can be condensed to this:
+Note, since breakpoints set a `min-width` media query, it's not necessary to set multiple breakpoint values. For example the above code snippet can be condensed to this:
 ```jsx
 <Box
   pt={{
