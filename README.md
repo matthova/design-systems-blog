@@ -6,7 +6,7 @@ The goal of this blog is to:
   3. Talk about implementing responsive layouts using a window resize listener and the theme's breakpoint definitions
 
 ## Some background
-April 2018 I began my work at Oqton as a front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code, but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification.  
+April 2018 I began my work at [Oqton](https://www.oqton.com/) as a front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code, but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification.  
 At some point during the first week, I noticed a bug in the UI that was only happening on Firefox. I did a bit of googling, wrote a few lines of css, and was very proud of myself when I was able to make a PR that addressed the issue. As the app evolved, our UI-Lead (who had been doing most of the css to this point) had assigned me a few more css-related tickets. I was frustrated by how long it took me to implement designs that, on first-glance, I considered “so simple”.
 
 # FLEXBOX-ZOMBIES
