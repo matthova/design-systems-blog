@@ -190,9 +190,9 @@ function ourLayout({ menu, title, userIcon, filter, children }) {
 ```
 
 That's a brief look into some ideas we've been exploring when implementing our design system.
-- If you're interested in learning more, let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
-- If there's a typo, or something that needs clarification, please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
-- If you're interested in joining a company that's revolutionizing manufacturing, check out [Oqton](https://www.oqton.com/)
+- Interested in learning more, let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
+- Find a typo, or something that needs clarification? Please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
+- Interested in making tools to revolutionizing manufacturing? Check out [Oqton](https://www.oqton.com/)
 - If you haven't clicked on the [Flexbox Zombies](https://mastery.games/p/flexbox-zombies) link, do it now! It's amazing.
 
 Thanks for reading
