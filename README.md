@@ -191,7 +191,7 @@ function ourLayout({ menu, title, userIcon, filter, children }) {
 ```
 
 That's a brief look into some ideas we've been exploring when implementing our design system.
-- Interested in learning more, let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
+- Interested in learning more about design systems made with styled-system? Let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
 - Find a typo, or something that needs clarification? Please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
 - Interested in making tools to revolutionize 3d printing and manufacturing? Check out [Oqton](https://www.oqton.com/)
 - If you haven't clicked on the [Flexbox Zombies](https://mastery.games/p/flexbox-zombies) link, do it now! It's amazing.
