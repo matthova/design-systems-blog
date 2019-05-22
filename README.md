@@ -32,7 +32,7 @@ We utilize:
 
 ## A better way: Using Object key syntax for font-sizes, spacing, and breakpoints instead of array syntax.
 
-**Array syntax and it's cons**
+**When array syntax goes wrong**
 
 Most boilerplate [Styled System](https://styled-system.com/) examples utilize array syntax like this
 ```js
@@ -44,7 +44,7 @@ const theme = {
    ],
 };
 ```
-The problem for our team was that the design-spec was in flux and we wanted to make sure if an additional space, fontSize or breakpoint was necessary, it could be added without having to overwrite all existing style declarations.
+The problem for our team was that the design-spec was in flux and we wanted to make sure if an additional space, fontSize or breakpoint was necessary, it could be added without having to overwrite all existing style declarations.  
 
 For example, if we had a `<Box />` component that used the styled-system space-prop for padding:
 ```jsx
@@ -70,7 +70,7 @@ We would have to rewrite every instance of the `<Box />` component to
 <Box pt={3} />
 ```
 
-**Obeject key syntax and it's wins**
+**Object-key-syntax to save the day**
 
 By using key-based spacing, we are able to add additional values (relatively) painlessly
 ```js
