@@ -47,22 +47,22 @@ For example, if we had a `<Box />` component that used the styled-system space-p
 <Box pt={1} />
 <Box pt={2} />
 ```
-But later on we wanted to add a spacing value of 4, for some reason
+But later on we wanted to add a spacing value of 4, for some reason.
+```js
+const theme = {
+  space: [
+    0,
+    4,
+    8,
+    16
+   ],
+};
+```
 We would have to rewrite every instance of the `<Box />` component to
 ```jsx
 <Box pt={0} />
 <Box pt={2} />
 <Box pt={3} />
-```
-
-```js
-const theme = {
-  space: [
-    0,
-    8,
-    16
-   ],
-};
 ```
 
 By using key-based spacing, we are able to add additional values (relatively) painlessly
