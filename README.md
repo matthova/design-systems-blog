@@ -25,7 +25,7 @@ Our UI-Lead had mentioned that we were potentially looking to hire another UI en
 We utilize:
 - [Styled Components](https://www.styled-components.com/) library to write CSS-in-JS for our app’s components 
 - [Styled System](https://styled-system.com/) library for creating easy-to-use props for consuming your themed components. 
-- [Rebass](https://rebassjs.org/) (v2) for styling all of our React components. 
+- [Rebass](https://rebassjs.org/) for styling all of our React components. We actually slowly removed Rebass and created our own equivalent set of components over time.
 
 ^^ Rebass is a great library and I would highly recommend it as a starting point for any design system. **One downside is that Rebass's standard configuration requires that you use array syntax for your font-sizes, spacing, and breakpoint props.**
 
