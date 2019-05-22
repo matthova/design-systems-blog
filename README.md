@@ -1,4 +1,4 @@
-> This blog is targeted at javascript developers with experience using React, but many of the design-system concepts should be applicable across any User Interface (UI). 
+> NOTE: This blog is targeted at javascript developers with experience using React, but many of the design-system concepts should be applicable across any User Interface (UI). 
 
 The goal of this blog is to talk about:
   1. [What helped me get up to speed with implementing page layouts in css.]()
@@ -9,6 +9,7 @@ The goal of this blog is to talk about:
 
 # What helped me get up to speed with implementing page layouts in css.
 April 2018 I began my work at [Oqton](https://www.oqton.com/) as a front-end engineer. Like many engineers working at startups, I came onboard with the understanding that my job would involve writing code, but the specifics would change as the company’s goals evolved. Before working at Oqton, my experience with css was very minimal. I generally felt okay modifying existing css, but I would hesitate if you were to ask me to implement any large feature to match a design specification.  
+
 At some point during the first week, I noticed a bug in the UI that was only happening on Firefox. I did a bit of googling, wrote a few lines of css, and was very proud of myself when I was able to make a PR that addressed the issue. As the app evolved, our UI-Lead (who had been doing most of the css to this point) had assigned me a few more css-related tickets. I was frustrated by how long it took me to implement designs that, on first-glance, I considered “so simple”.
 
 ## Enter: FLEXBOX-ZOMBIES
@@ -29,7 +30,10 @@ We utilize:
 
 ^^ Rebass is a great library and I would highly recommend it as a starting point for any design system. **One downside is that Rebass's standard configuration requires that you use array syntax for your font-sizes, spacing, and breakpoint props.**
 
-## Object key syntax for font-sizes, spacing, and breakpoints
+## A better way: Using Object key syntax for font-sizes, spacing, and breakpoints instead of array syntax.
+
+**Array syntax and it's cons**
+
 Most boilerplate [Styled System](https://styled-system.com/) examples utilize array syntax like this
 ```js
 const theme = {
@@ -66,6 +70,8 @@ We would have to rewrite every instance of the `<Box />` component to
 <Box pt={3} />
 ```
 
+**Obeject key syntax and it's wins**
+
 By using key-based spacing, we are able to add additional values (relatively) painlessly
 ```js
 const theme = {
@@ -89,7 +95,7 @@ This same pattern can be applied with any styled-system helper function
 
 # Implementing responsive layouts using a window resize listener and the theme's breakpoint definitions.
 
-StyledSystem allows for modifying space props based on the current breakpoint. For example with key-based breakpoints for the theme
+[Styled System](https://styled-system.com/) allows for modifying space props based on the current breakpoint. For example with key-based breakpoints for the theme
 ```js
 const theme = {
   space: {
