@@ -147,34 +147,37 @@ Imagine a layout that behaves like this:
 Instead of using media queries and per-breakpoint style declaration, in many cases it was easier to create a per-breakpoint layout. We set event listeners onResize and then determine the `responsiveKey` from that.
 For example: 
 ```jsx
+import React, { useEffect, useState } from "react";
+import { LargeLayout } from './LargeLayout';
+import { SmallLayout } from './SmallLayout';
+
 const theme = {
   breakpoints: {
     s: 0,
-    l: 800,
+    l: 600,
   }
 };
 
-function ourLayout({ menu, title, userIcon, filter, children }) {
+function ResponsiveLayout(props) {
   const [responsiveKey, setResponsiveKey] = useState(getCurrentResponsiveKey());
 
   function getCurrentResponsiveKey() {
     // Fall-back to the smallest breakpoint if nothing else matches
-    let currentResponsiveKey = Object.values(theme.breakpoints)[0];
-
-    for(const [key, value] of Object.entries(theme.breakpoints) {
+    let currentResponsiveKey = Object.keys(theme.breakpoints)[0];
+    for(const [key, value] of Object.entries(theme.breakpoints)) {
       if (window.innerWidth >= value) {
         currentResponsiveKey = key;
       }
     }
-    return responsiveKey
-  }
-
-  function setCurrentResponsiveKey() {
-    setResponsiveKey(getCurrentResponsiveKey());
+    return currentResponsiveKey;
   }
 
   // componentDidMount
   useEffect(() => {
+    function setCurrentResponsiveKey() {
+      const newResponsiveKey = getCurrentResponsiveKey();
+      setResponsiveKey(newResponsiveKey);
+    }
     window.addEventListener('resize', setCurrentResponsiveKey);
     // componentWillUnmount
     return () => {
@@ -183,10 +186,9 @@ function ourLayout({ menu, title, userIcon, filter, children }) {
   }, []);
 
   if(responsiveKey === 's') {
-    return; // Imeplement small layout here
-  } else if (responsiveKey === 'l') {
-    return; // Implement large layout here
+    return <SmallLayout {...props} />
   }
+  return <LargeLayout {...props} />;
 }
 ```
 
