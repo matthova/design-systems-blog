@@ -146,9 +146,6 @@ Imagine a layout that behaves like this:
 
 Instead of using media queries and per-breakpoint style declaration, in many cases it was easier to create a per-breakpoint layout. We set event listeners onResize and then determine the `responsiveKey` from that.
 
-[Here](https://rrejs.codesandbox.io/) is an example of this layout.  
-[Here]() is a code example.
-
 The core concept of this code is that we hold the "current" responsive breakpoint as state in react and then pass down that state, either via props or context to the rest of the app.
 Here's a basic example of the logic behind setting the `responsiveKey` state in react:  
 
@@ -197,6 +194,10 @@ function ResponsiveLayout(props) {
   return <LargeLayout {...props} />;
 }
 ```
+
+Expanding on this idea, here's a full fledged implementation using styled-components and styled-system:  
+[Here](https://rrejs.codesandbox.io/) is an example of this layout.  
+[Here](https://codesandbox.io/s/responsivelayoutexample-rrejs) is a code example.  
 
 That's a brief look into some ideas we've been exploring when implementing our design system.
 - Interested in learning more about design systems made with styled-system? Let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
