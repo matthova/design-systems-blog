@@ -45,7 +45,7 @@ const theme = {
    ],
 };
 ```
-The problem for our team was that the design-spec was in flux and we wanted to make sure if an additional space, fontSize or breakpoint was necessary, it could be added without having to overwrite all existing style declarations.  
+The problem for our team was that the design-spec was in flux and we wanted to make sure if an additional space, fontSize or breakpoint was necessary, it could be added without having to overwrite all existing style declarations. Note, the `theme` is just an object, so you can always create aliases in addition to using an array, but in this example we'll focus on the benefits we found of using object-keys over array-index shorthand.
 
 For example, if we had a `<Box />` component that used the styled-system space-prop for padding:
 ```jsx
@@ -145,7 +145,13 @@ Imagine a layout that behaves like this:
 |![large breakpoint layout](large-breakpoint-layout.jpg)|![small breakpoint layout](small-breakpoint-layout.jpg)|
 
 Instead of using media queries and per-breakpoint style declaration, in many cases it was easier to create a per-breakpoint layout. We set event listeners onResize and then determine the `responsiveKey` from that.
-For example: 
+
+[Here](https://rrejs.codesandbox.io/) is an example of this layout.  
+[Here]() is a code example.
+
+The core concept of this code is that we hold the "current" responsive breakpoint as state in react and then pass down that state, either via props or context to the rest of the app.
+Here's a basic example of the logic behind setting the `responsiveKey` state in react:  
+
 ```jsx
 import React, { useEffect, useState } from "react";
 import { LargeLayout } from './LargeLayout';
@@ -192,11 +198,9 @@ function ResponsiveLayout(props) {
 }
 ```
 
-[Here's a live example](https://codesandbox.io/s/responsivelayoutexample-rrejs)
-
 That's a brief look into some ideas we've been exploring when implementing our design system.
 - Interested in learning more about design systems made with styled-system? Let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
-- Find a typo, or something that needs clarification? Please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
+- Find a typo, something that needs clarification, do you have a way to explain via constructive criticism that this a horrible idea? Please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
 - Interested in making tools to revolutionize 3d printing and manufacturing? Check out [Oqton](https://www.oqton.com/)
 - If you haven't clicked on the [Flexbox Zombies](https://mastery.games/p/flexbox-zombies) link, do it now! It's amazing.
 
