@@ -195,7 +195,7 @@ function ResponsiveLayout(props) {
 
 Expanding on this idea, here's a full fledged implementation using styled-components and styled-system:  
 [Here](https://rrejs.codesandbox.io/) is an example of this layout.  
-[Here](https://codesandbox.io/s/responsivelayoutexample-rrejs) is a code example.  
+[Here's the code](https://codesandbox.io/s/responsivelayoutexample-rrejs).  
 
 That's a brief look into some ideas we've been exploring when implementing our design system.
 - Interested in learning more about design systems made with styled-system? Let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
