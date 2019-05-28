@@ -29,8 +29,6 @@ We utilize:
 - [Styled System](https://styled-system.com/) library for creating easy-to-use props for consuming your themed components. 
 - [Rebass](https://rebassjs.org/) for styling all of our React components. We actually slowly removed Rebass and created our own equivalent set of components over time.
 
-^^ Rebass is a great library and I would highly recommend it as a starting point for any design system. **One downside is that Rebass's standard configuration requires that you use array syntax for your font-sizes, spacing, and breakpoint props.**
-
 ## A better way: Using Object key syntax for font-sizes, spacing, and breakpoints instead of array syntax.
 
 **When array syntax goes wrong**
