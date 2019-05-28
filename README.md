@@ -115,25 +115,25 @@ const theme = {
 ```
 
 You can use breakpoint keys to set per-breakpoint padding
-```
-<Box
-  pt={{
-    s: 'xs',
-    m: 's',
-    l: 's',
-    xl: 'm'
-  }}
-/>
+```jsx
+const paddingTop = {
+  s: 'xs',
+  m: 's',
+  l: 's',
+  xl: 'm'
+};
+
+<Box pt={paddingTop} />
 ```
 Note, since breakpoints set a `min-width` media query, it's not necessary to set multiple breakpoint values. For example the above code snippet can be condensed to this:
 ```
-<Box
-  pt={{
-    s: 'xs',
-    m: 's',
-    xl: 'm'
-  }}
-/>
+const paddingTop = {
+  s: 'xs',
+  m: 's',
+  xl: 'm'
+};
+
+<Box pt={paddingTop} />
 ```
 
 ## Using key-based breakpoints to render responsive layouts
