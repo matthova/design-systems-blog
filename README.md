@@ -192,6 +192,8 @@ function ResponsiveLayout(props) {
 }
 ```
 
+Here's a live example: https://codesandbox.io/s/responsivelayoutexample-rrejs
+
 That's a brief look into some ideas we've been exploring when implementing our design system.
 - Interested in learning more about design systems made with styled-system? Let me know 🐦 [@matt_hova](https://twitter.com/Matt_Hova) 🐦
 - Find a typo, or something that needs clarification? Please [open an issue](https://github.com/matthova/design-systems-blog/issues) :)
