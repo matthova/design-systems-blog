@@ -115,7 +115,7 @@ const theme = {
 ```
 
 You can use breakpoint keys to set per-breakpoint padding
-```jsx
+```js
 <Box
   pt={{
     s: 'xs',
@@ -126,7 +126,7 @@ You can use breakpoint keys to set per-breakpoint padding
 />
 ```
 Note, since breakpoints set a `min-width` media query, it's not necessary to set multiple breakpoint values. For example the above code snippet can be condensed to this:
-```jsx
+```js
 <Box
   pt={{
     s: 'xs',
